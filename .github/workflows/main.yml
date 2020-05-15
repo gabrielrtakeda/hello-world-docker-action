@@ -15,5 +15,5 @@ jobs:
           --force \
           --access_key=${{ secrets.S3_ACCESS_KEY }} \
           --secret_key=${{ secrets.S3_SECRET_KEY }} \
-          get ${{ secrets.S3_URI }}/network-graphql/schema/latest-schema.json dev-schema.json
+          get ${{ secrets.S3_URL }}/network-graphql/schema/latest-schema.json dev-schema.json
 
