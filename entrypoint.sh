@@ -1,5 +1,5 @@
 #!/bin/sh -l
 
-echo "Hello $1"
+echo "::debug file=app.js,line=1::Entered octocatAddition method"
 time=$(date)
 echo "::set-output name=time::$time"
