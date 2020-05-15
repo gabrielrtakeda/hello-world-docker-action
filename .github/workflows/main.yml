@@ -6,8 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    - name: Hello world action step
+    - name: Install s3cmd
       id: hello
       uses: gabrielrtakeda/hello-world-docker-action@master
+
+    - name: Run s3cmd
       run: s3cmd --help
 
