@@ -1,15 +1,19 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'github-actions-s3cmd'
+description: 'The s3cmd for Github Actions'
 inputs:
-  who_to_greet:  # id of input
-    description: 'Who to greet'
+  access_key:
+    description: 'The S3 access_key to authenticate s3cmd.'
     required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  secret_key:
+    description: 'The S3 secret_key to authenticate s3cmd.'
+    required: true
+  cmd:
+    description: 'The command to be executed with s3cmd.'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who_to_greet }}
+    - ${{ inputs.access_key }}
+    - ${{ inputs.secret_key }}
+    - ${{ inputs.cmd }}

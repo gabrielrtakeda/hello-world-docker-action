@@ -1,9 +1,15 @@
-#!/bin/sh -l
+#!/bin/sh -e
 
-printenv
-echo "Hello $1"
-echo "Goodbye $1"
-echo "::debug:: [debug] Hello $1"
-echo "::debug:: [debug-env] Hello $INPUT_WHO_TO_GREET"
-time=$(date)
-echo "::set-output name=time::$time"
+echo "::debug:: [access_key] $INPUT_ACCESS_KEY"
+echo "::debug:: [secret_key] $INPUT_SECRET_KEY"
+echo "::debug:: [cmd] $INPUT_CMD"
+
+s3cmd \
+  --no-check-certificate \
+  --access_key=$INPUT_ACCESS_KEY \
+  --secret_key=$INPUT_SECRET_KEY \
+  --verbose \
+  --human-readable-sizes \
+  --stop-on-error \
+  $INPUT_CMD
+

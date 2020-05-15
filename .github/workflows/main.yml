@@ -1,8 +1,8 @@
 on: [push]
 
 jobs:
-  hello-world-job:
-    name: A job to say hello
+  testing-job:
+    name: A job testing the Github Actions workflow
     runs-on: ubuntu-latest
     steps:
 
@@ -10,8 +10,6 @@ jobs:
       id: hello
       uses: gabrielrtakeda/hello-world-docker-action@master
       with:
-        who_to_greet: 'Gabriel Ramos Takeda'
-
-    # Use the output from the `hello` step
-    - name: Get the output time
-      run: echo "The time was ${{ steps.hello.outputs.time }}"
+        access_key: 'my_super_secret_access_key'
+        secret_key: 'my_super_secret_secret_key'
+        cmd: 'get http://s3.io'
