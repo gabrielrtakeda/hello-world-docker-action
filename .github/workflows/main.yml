@@ -10,7 +10,7 @@ jobs:
       id: hello
       uses: gabrielrtakeda/hello-world-docker-action@master
       with:
-        who-to-greet: 'Gabriel Ramos Takeda'
+        who_to_greet: 'Gabriel Ramos Takeda'
 
     # Use the output from the `hello` step
     - name: Get the output time
