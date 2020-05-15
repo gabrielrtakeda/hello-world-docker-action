@@ -10,6 +10,8 @@ jobs:
       id: hello
       uses: gabrielrtakeda/hello-world-docker-action@master
       with:
-        access_key: 'my_super_secret_access_key'
-        secret_key: 'my_super_secret_secret_key'
-        cmd: 'get http://s3.io'
+        cmd: >-
+          --force \
+          --access_key=${{ secrets.S3_ACCESS_KEY }} \
+          --secret_key=${{ secrets.S3_SECRET_KEY }} \
+          get s3://jusbrasil-deps/network-graphql/schema/latest-schema.json dev-schema.json

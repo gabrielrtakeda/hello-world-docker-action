@@ -1,12 +1,6 @@
 name: 'github-actions-s3cmd'
 description: 'The s3cmd for Github Actions'
 inputs:
-  access_key:
-    description: 'The S3 access_key to authenticate s3cmd.'
-    required: true
-  secret_key:
-    description: 'The S3 secret_key to authenticate s3cmd.'
-    required: true
   cmd:
     description: 'The command to be executed with s3cmd.'
     required: true
@@ -14,6 +8,4 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.access_key }}
-    - ${{ inputs.secret_key }}
     - ${{ inputs.cmd }}
