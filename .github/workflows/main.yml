@@ -8,7 +8,7 @@ jobs:
 
     - name: Hello world action step
       id: hello
-      uses: gabrielrtakeda/hello-world-docker-action@v1
+      uses: gabrielrtakeda/hello-world-docker-action@master
       with:
         who-to-greet: 'Gabriel Ramos Takeda'
 
