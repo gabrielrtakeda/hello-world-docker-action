@@ -11,5 +11,5 @@ jobs:
       uses: gabrielrtakeda/hello-world-docker-action@master
 
     - name: Run s3cmd
-      run: s3cmd --help
+      run: s3cmd
 

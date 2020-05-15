@@ -1,5 +1,6 @@
 #!/bin/sh -e
 
-echo "::debug:: [flags] $INPUT_FLAGS"
-echo "::debug:: [cmd] $INPUT_CMD"
-echo "::add-path::$(which s3cmd)"
+mkdir -p $GITHUB_WORKSPACE/bin
+echo "echo Hello, world!" > $GITHUB_WORKSPACE/bin/s3cmd
+echo "::add-path::$GITHUB_WORKSPACE/bin" # Make it accessible from docker containers
+echo "::add-path::$RUNNER_WORKSPACE/$(basename $GITHUB_REPOSITORY)/bin" # Make it accessible from runner
