@@ -1,5 +1,6 @@
 #!/bin/sh -l
 
+printenv
 echo "Hello $1"
 echo "Goodbye $1"
 echo "::debug:: [debug] Hello $1"
