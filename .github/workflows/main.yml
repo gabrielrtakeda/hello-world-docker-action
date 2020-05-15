@@ -9,9 +9,5 @@ jobs:
     - name: Hello world action step
       id: hello
       uses: gabrielrtakeda/hello-world-docker-action@master
-      with:
-        cmd: >-
-          --force \
-          --access_key=${{ secrets.S3_ACCESS_KEY }} \
-          --secret_key=${{ secrets.S3_SECRET_KEY }} \
-          get s3://jusbrasil-deps/network-graphql/schema/latest-schema.json dev-schema.json
+      run: s3cmd --help
+

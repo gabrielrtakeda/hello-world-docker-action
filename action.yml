@@ -1,11 +1,5 @@
 name: 'github-actions-s3cmd'
 description: 'The s3cmd for Github Actions'
-inputs:
-  cmd:
-    description: 'The command to be executed with s3cmd.'
-    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.cmd }}
